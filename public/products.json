@@ -1,0 +1,68 @@
+[
+    {
+        "service_id": "04",
+        "category": "Mechanical Keyboards",
+        "title": "Varmilo VA87M",
+        "img": "https://ibb.co/4fj83nd",
+        "original-price": "129",
+        "seller-name": "Meredith James",
+        "resale-price": "90",
+        "years-of-use": "2 years",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+    },
+    {
+        "service_id": "05",
+        "category": "Backlit Keyboards",
+        "title": "Perixx PERIBOARD Backlit Keyboard",
+        "img": "https://ibb.co/TMJ0C6L",
+        "original-price": "25",
+        "seller-name": "Janis Adams",
+        "resale-price": "17",
+        "years-of-use": "4 months",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+    },
+    {
+        "service_id": "01",
+        "category": "Ergonomic Keyboards",
+        "title": "Microsoft Sculpt Ergonomic Desktop",
+        "img": "https://ibb.co/b3bp85t",
+        "original-price": "98",
+        "seller-name": "Phyllis West",
+        "resale-price": "50",
+        "years-of-use": "1 years",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+    },
+    {
+        "service_id": "02",
+        "category": "Backlit Keyboards",
+        "title": "EVGA Z12 RGB Backlit Keyboard",
+        "img": "https://ibb.co/3p6SVtk",
+        "original-price": "49",
+        "seller-name": "Clark Grant",
+        "resale-price": "25",
+        "years-of-use": "1 years",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+    },
+    {
+        "service_id": "03",
+        "category": "Mechanical Keyboards",
+        "title": "Leopold FC900R",
+        "img": "https://ibb.co/Tc12pBP",
+        "original-price": "124",
+        "seller-name": "Lauren Silva",
+        "resale-price": "75",
+        "years-of-use": "9 months",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+    },
+    {
+        "service_id": "06",
+        "category": "Ergonomic Keyboards",
+        "title": "Logitech Ergo K860",
+        "img": "https://ibb.co/kS8GJ7f",
+        "original-price": "158",
+        "seller-name": "Ira Delgado",
+        "resale-price": "90",
+        "years-of-use": "7 months",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+    }
+]
