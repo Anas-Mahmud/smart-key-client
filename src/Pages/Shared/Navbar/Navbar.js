@@ -5,9 +5,9 @@ import logo from "../../../assets/logo.png";
 const Navbar = () => {
 
     const menuItems = <React.Fragment>
-        <li><Link>Home</Link></li>
-        <li><Link>Item 3</Link></li>
-        <li><Link>Item 3</Link></li>
+        <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'/all-products'}>Products</Link></li>
+        <li><Link to={'/blog'}>Blogs</Link></li>
     </React.Fragment>
 
     return (
