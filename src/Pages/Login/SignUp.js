@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const handleSubmit = event => {
@@ -14,18 +15,48 @@ const SignUp = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        console.log(name, email, password, image);
+        const formData = new FormData()
+        formData.append('image', image)
+        console.log(formData);
 
-        setError('');
-        createUser(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            }).catch(err => {
-                console.error(err.message)
-                setError(err.message)
-            });
+        // 613bae113c97f7b162ce49e2a5e7aec5
 
+        const url = `https://api.imgbb.com/1/upload?key=613bae113c97f7b162ce49e2a5e7aec5`
+
+        fetch(url, {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.data.display_url)
+
+                setError('');
+                createUser(email, password)
+                    .then(result => {
+                        const user = result.user;
+                        console.log(user);
+                        toast("User created Successfully")
+
+                        const userInfo = {
+                            displayName: name,
+                            photoURL: data.data.display_url
+                        }
+
+                        updateUserProfile(userInfo)
+                            .then(() => { })
+                            .catch(err => {
+                                console.error(err)
+                                setError(err.message)
+                            })
+
+                    }).catch(err => {
+                        console.error(err.message)
+                        setError(err.message)
+                    });
+
+            })
+            .catch(err => console.error(err))
     }
 
     return (
