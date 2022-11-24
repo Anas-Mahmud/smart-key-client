@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from "../../../assets/logo.png";
 
 const Navbar = () => {
 
@@ -20,6 +21,9 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {menuItems}
                         </ul>
+                    </div>
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-accent">
+                        <img src={logo} alt="" />
                     </div>
                     <Link to={'/'} className="btn btn-ghost normal-case text-2xl font-semibold">Smart Key</Link>
                 </div>
