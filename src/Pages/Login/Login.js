@@ -1,15 +1,39 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
+    const { register, handleSubmit } = useForm();
+    const { signIn, providerLogin } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
-        console.log(email, password);
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleSignUp = data => {
+        console.log(data);
+
+        setError('');
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            }).catch(err => {
+                console.error(err.message)
+                setError(err.message)
+            });
+    }
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                // navigate(from, { replace: true });
+            })
+            .catch(err => console.error(err));
     }
 
     return (
@@ -22,15 +46,18 @@ const Login = () => {
                         <Link to={'/signup'} className="font-medium text-indigo-500 border-b border-indigo-600"> register your FREE account </Link>
                     </p>
                 </div>
-                <form onSubmit={handleSubmit} className="max-w-md w-full mx-auto bg-white shadow rounded-lg p-7 py-16 space-y-6">
+                <form onSubmit={handleSubmit(handleSignUp)} className="max-w-md w-full mx-auto bg-white shadow rounded-lg p-7 py-16 space-y-6">
                     <div className="flex flex-col">
                         <label className="text-sm font-bold text-gray-600 mb-1" for="email">Email Address</label>
-                        <input className="border rounded-md bg-white px-3 py-2" type="text" name="email" id="email" placeholder="Enter your Email Address" />
+                        <input className="border rounded-md bg-white px-3 py-2" type="text" name="email" {...register("email")} id="email" placeholder="Enter your Email Address" />
                     </div>
                     <div className="flex flex-col">
                         <label className="text-sm font-bold text-gray-600 mb-1" for="password">Password</label>
-                        <input className="border rounded-md bg-white px-3 py-2" type="password" name="password" id="password" placeholder="Enter your Password" />
+                        <input className="border rounded-md bg-white px-3 py-2" type="password" name="password" {...register("password")} id="password" placeholder="Enter your Password" />
                     </div>
+                    {
+                        error && <p className='text-red-500'>{error}</p>
+                    }
                     <div>
                         <input className="w-full bg-indigo-600 text-white rounded-md p-2" type="submit" value="Sign in" />
                     </div>
@@ -41,7 +68,7 @@ const Login = () => {
                         </div>
                     </div>
                     <div className="">
-                        <button className="w-full border-2 rounded-md p-3 cursor-pointer hover:border-gray-600 text-center font-semibold">
+                        <button onClick={handleGoogleSignIn} className="w-full border-2 rounded-md p-3 cursor-pointer hover:border-gray-600 text-center font-semibold">
                             Sign in with Google
                         </button>
                     </div>

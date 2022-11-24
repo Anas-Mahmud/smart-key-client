@@ -1,7 +1,33 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
+
+    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const image = event.target.image.files[0];
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        console.log(name, email, password, image);
+
+        setError('');
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            }).catch(err => {
+                console.error(err.message)
+                setError(err.message)
+            });
+
+    }
+
     return (
         <div>
             <main className="flex w-full">
@@ -20,7 +46,7 @@ const SignUp = () => {
                         </svg>
                         <h1 className="mt-10 text-5xl font-extrabold">Register</h1>
                     </div>
-                    <div className="w-full mx-auto space-y-6">
+                    <form onSubmit={handleSubmit} className="w-full mx-auto space-y-6">
                         <div className="flex flex-col">
                             <label className="text-sm font-bold text-gray-600 mb-1" for="email">Your Name</label>
                             <input type="text" name="name" id="name"
@@ -29,7 +55,7 @@ const SignUp = () => {
                         </div>
                         <div className="flex flex-col">
                             <label className="text-sm font-bold text-gray-600 mb-1" for="email">Your Photo</label>
-                            <input type="file" name="photo" id="photo"
+                            <input type="file" name="image" id="photo" accept='image/*'
                                 className="w-full rounded-md px-4 py-2 mt-1 text-sm outline-none border-2 border-gray-200 focus:border-indigo-500" />
                         </div>
                         <div className="flex flex-col">
@@ -44,8 +70,11 @@ const SignUp = () => {
                                 className="w-full rounded-md px-4 py-2 mt-1 text-sm outline-none border-2 border-gray-200 focus:border-indigo-500"
                                 placeholder="******" />
                         </div>
+                        {
+                            error && <p className='text-red-500'>{error}</p>
+                        }
                         <div>
-                            <button className="w-full bg-indigo-600 text-white rounded-md p-2">Sign Up</button>
+                            <input className="w-full bg-indigo-600 text-white rounded-md p-2" type="submit" value="Sign Up" />
                         </div>
                         <div className="relative pb-2">
                             <div className="absolute top-0 left-0 w-full border-b"></div>
@@ -58,7 +87,7 @@ const SignUp = () => {
                                 Login to your existing account
                             </Link>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </main>
         </div>
