@@ -1,0 +1,17 @@
+[
+    {
+        "categoryId": "Mechanical",
+        "title": "Mechanical Keyboards",
+        "img": "https://ibb.co/ZfKFRkk"
+    },
+    {
+        "categoryId": "Backlit",
+        "title": "Backlit Keyboards",
+        "img": "https://ibb.co/vdnY6M7"
+    },
+    {
+        "categoryId": "Ergonomic",
+        "title": "Ergonomic Keyboards",
+        "img": "https://ibb.co/BT7WPdG"
+    }
+]

@@ -42,8 +42,7 @@ const SignUp = () => {
                         const user = result.user;
                         console.log(user);
                         setLoading(false)
-                        toast('User Created Successfully')
-                        navigate(from, { replace: true })
+                        toast.success('User Created Successfully')
 
                         const userInfo = {
                             displayName: name,
@@ -51,7 +50,9 @@ const SignUp = () => {
                         }
 
                         updateUserProfile(userInfo)
-                            .then(() => { })
+                            .then(() => {
+                                navigate(from, { replace: true })
+                            })
                             .catch(err => {
                                 console.error(err)
                                 setError(err.message)

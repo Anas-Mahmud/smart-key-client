@@ -5,7 +5,6 @@ import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Login/SignUp";
-import AllProducts from "../Pages/Products/AllProducts/AllProducts";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
@@ -26,10 +25,6 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
-            },
-            {
-                path: '/all-products',
-                element: <AllProducts></AllProducts>
             },
             {
                 path: '/blog',
