@@ -10,7 +10,7 @@ const CategoryCard = ({ category }) => {
                 <img className="object-cover w-full h-56" src={category.img} alt="avatar" />
                 <div className="py-5 text-center">
                     <h2 className="block text-2xl font-bold text-gray-800 dark:text-white my-2" tabindex="0" role="link">{category.title}</h2>
-                    <Link to={category.categoryId}><PrimaryButton>See All Products</PrimaryButton></Link>
+                    <Link to={`/products/${category.categoryId}`}><PrimaryButton>See All Products</PrimaryButton></Link>
                 </div>
             </div>
         </div>
