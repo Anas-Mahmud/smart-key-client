@@ -2,12 +2,14 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import SmallSpinner from '../../components/SmallSpinner/SmallSpinner';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
 
     const { register, handleSubmit } = useForm();
-    const { signIn, providerLogin } = useContext(AuthContext);
+    const { signIn, providerLogin, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
@@ -24,6 +26,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setLoading(false)
+                toast("User Login Successfully")
                 navigate(from, { replace: true })
             }).catch(err => {
                 console.error(err.message)
@@ -36,7 +40,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                // navigate(from, { replace: true });
+                navigate(from, { replace: true });
             })
             .catch(err => console.error(err));
     }
@@ -64,7 +68,9 @@ const Login = () => {
                         error && <p className='text-red-500'>{error}</p>
                     }
                     <div>
-                        <input className="w-full bg-indigo-600 text-white rounded-md p-2" type="submit" value="Sign in" />
+                        <button className="w-full bg-indigo-600 text-white rounded-md p-2" type="submit">
+                            {loading ? <SmallSpinner /> : "Sign Up"}
+                        </button>
                     </div>
                     <div className="relative pb-2">
                         <div className="absolute top-0 left-0 w-full border-b"></div>

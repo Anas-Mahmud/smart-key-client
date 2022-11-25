@@ -1,12 +1,17 @@
 import React, { useContext, useState } from 'react';
-import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import SmallSpinner from '../../components/SmallSpinner/SmallSpinner';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
 
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -36,7 +41,9 @@ const SignUp = () => {
                     .then(result => {
                         const user = result.user;
                         console.log(user);
-                        toast("User created Successfully")
+                        setLoading(false)
+                        toast('User Created Successfully')
+                        navigate(from, { replace: true })
 
                         const userInfo = {
                             displayName: name,
@@ -52,11 +59,14 @@ const SignUp = () => {
 
                     }).catch(err => {
                         console.error(err.message)
+                        setLoading(false)
                         setError(err.message)
                     });
 
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                console.error(err)
+            })
     }
 
     return (
@@ -105,7 +115,9 @@ const SignUp = () => {
                             error && <p className='text-red-500'>{error}</p>
                         }
                         <div>
-                            <input className="w-full bg-indigo-600 text-white rounded-md p-2" type="submit" value="Sign Up" />
+                            <button className="w-full bg-indigo-600 text-white rounded-md p-2" type="submit">
+                                {loading ? <SmallSpinner /> : "Sign Up"}
+                            </button>
                         </div>
                         <div className="relative pb-2">
                             <div className="absolute top-0 left-0 w-full border-b"></div>
