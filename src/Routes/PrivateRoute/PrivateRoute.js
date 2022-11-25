@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Spinner from '../../components/Spinner/Spinner';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const PrivateRoute = ({ children }) => {
@@ -8,7 +9,7 @@ const PrivateRoute = ({ children }) => {
 
     if (loading) {
         return <div className='flex justify-center'>
-            <progress className="progress w-56 mt-20"></progress>
+            <Spinner></Spinner>
         </div>
     }
 
