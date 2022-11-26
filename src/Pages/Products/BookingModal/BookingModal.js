@@ -14,6 +14,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
+        const photo = event.target.photo.value;
         const price = event.target.price.value;
         const location = event.target.location.value;
         const phone = event.target.phone.value;
@@ -24,6 +25,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
             productName: productDetails?.title,
             name,
             email,
+            photo,
             price,
             location,
             phone,
@@ -61,6 +63,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
                         <div className='grid grid-cols-2 gap-3'>
                             <input name='name' type="text" value={user?.displayName} disabled className="input input-bordered w-full" />
                             <input name='email' type="email" value={user?.email} disabled className="input input-bordered w-full" />
+                            <input name='photo' type="email" value={productDetails?.img} disabled className="input input-bordered w-full" />
                             <input name='price' type="text" value={productDetails.originalPrice} disabled className="input input-bordered w-full" />
                             <input name='location' type="text" value={productDetails.location} disabled className="input input-bordered w-full" />
                             <input name='phone' type="text" placeholder="Your phone" className="input input-bordered w-full" />
