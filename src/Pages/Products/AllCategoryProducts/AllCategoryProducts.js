@@ -6,6 +6,7 @@ import CategoryProduct from './CategoryProduct';
 const AllCategoryProducts = () => {
     const products = useLoaderData()
     const [productDetails, setProductDetails] = useState(null);
+    // console.log(products);
 
     return (
         <section class="text-gray-600 body-font">
@@ -27,6 +28,7 @@ const AllCategoryProducts = () => {
                     productDetails &&
                     <BookingModal
                         productDetails={productDetails}
+                        setProductDetails={setProductDetails}
                     ></BookingModal>}
             </div>
         </section>
