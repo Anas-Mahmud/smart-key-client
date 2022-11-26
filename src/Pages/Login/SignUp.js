@@ -3,14 +3,23 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import SmallSpinner from '../../components/SmallSpinner/SmallSpinner';
 import toast from 'react-hot-toast';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const { createUser, updateUserProfile, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
+
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
+    const [token] = useToken(createdUserEmail);
+
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
+
+    if (token) {
+        navigate(from, { replace: true })
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -75,21 +84,20 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('save user', data);
-                getUserToken(email);
-                // setCreatedUserEmail(email);
+                setCreatedUserEmail(email);
             })
     }
 
-    const getUserToken = email => {
-        fetch(`http://localhost:5000/jwt?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                if (data.accessToken) {
-                    localStorage.setItem('accessToken', data.accessToken);
-                    navigate(from, { replace: true })
-                }
-            })
-    }
+    // const getUserToken = email => {
+    //     fetch(`http://localhost:5000/jwt?email=${email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.accessToken) {
+    //                 localStorage.setItem('accessToken', data.accessToken);
+    //                 navigate(from, { replace: true })
+    //             }
+    //         })
+    // }
 
     return (
         <div>
