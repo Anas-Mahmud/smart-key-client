@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import SmallSpinner from '../../components/SmallSpinner/SmallSpinner';
-import { toast } from 'react-toastify';
 
 const SignUp = () => {
 
@@ -42,7 +41,7 @@ const SignUp = () => {
                         const user = result.user;
                         console.log(user);
                         setLoading(false)
-                        toast.success('User Created Successfully')
+                        // toast.success('User Created Successfully')
 
                         const userInfo = {
                             displayName: name,
