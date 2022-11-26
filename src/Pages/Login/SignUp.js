@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import SmallSpinner from '../../components/SmallSpinner/SmallSpinner';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
-
     const { createUser, updateUserProfile, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
     const location = useLocation();
@@ -24,7 +24,6 @@ const SignUp = () => {
         console.log(formData);
 
         // 613bae113c97f7b162ce49e2a5e7aec5
-
         const url = `https://api.imgbb.com/1/upload?key=613bae113c97f7b162ce49e2a5e7aec5`
 
         fetch(url, {
@@ -34,38 +33,61 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data.data.display_url)
-
                 setError('');
                 createUser(email, password)
                     .then(result => {
                         const user = result.user;
                         console.log(user);
                         setLoading(false)
-                        // toast.success('User Created Successfully')
-
+                        toast.success('User Created Successfully')
                         const userInfo = {
                             displayName: name,
                             photoURL: data.data.display_url
                         }
-
                         updateUserProfile(userInfo)
                             .then(() => {
-                                navigate(from, { replace: true })
+                                saveUser(name, email);
                             })
                             .catch(err => {
                                 console.error(err)
                                 setError(err.message)
                             })
-
                     }).catch(err => {
                         console.error(err.message)
                         setLoading(false)
                         setError(err.message)
                     });
-
             })
             .catch(err => {
                 console.error(err)
+            })
+    }
+
+    const saveUser = (name, email) => {
+        const user = { name, email };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('save user', data);
+                getUserToken(email);
+                // setCreatedUserEmail(email);
+            })
+    }
+
+    const getUserToken = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.accessToken) {
+                    localStorage.setItem('accessToken', data.accessToken);
+                    navigate(from, { replace: true })
+                }
             })
     }
 
