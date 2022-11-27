@@ -26,6 +26,7 @@ const SignUp = () => {
         const name = event.target.name.value;
         const image = event.target.image.files[0];
         const email = event.target.email.value;
+        const role = event.target.role.value;
         const password = event.target.password.value;
 
         const formData = new FormData()
@@ -55,7 +56,7 @@ const SignUp = () => {
                         }
                         updateUserProfile(userInfo)
                             .then(() => {
-                                saveUser(name, email);
+                                saveUser(name, email, role);
                             })
                             .catch(err => {
                                 console.error(err)
@@ -72,8 +73,8 @@ const SignUp = () => {
             })
     }
 
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -123,6 +124,16 @@ const SignUp = () => {
                             <input type="text" name="email" id="email"
                                 className="w-full rounded-md px-4 py-2 mt-1 text-sm outline-none border-2 border-gray-200 focus:border-indigo-500"
                                 placeholder="jonn@doe.com" />
+                        </div>
+                        <div className="flex flex-col">
+                            <select name='role' className="select select-bordered w-full">
+                                <option value={'buyer'}>Buyer</option>
+                                <option value={'seller'}>Seller</option>
+                            </select>
+
+                            {/* <input type="text" name="email" id="email"
+                                className="w-full rounded-md px-4 py-2 mt-1 text-sm outline-none border-2 border-gray-200 focus:border-indigo-500"
+                                placeholder="jonn@doe.com" /> */}
                         </div>
                         <div className="flex flex-col">
                             <label className="text-sm font-bold text-gray-600 mb-1" for="password">Password</label>

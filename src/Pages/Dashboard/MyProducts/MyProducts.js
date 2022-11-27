@@ -91,8 +91,6 @@ const MyProducts = () => {
                                 </th>
                             </tr>)
                         }
-
-
                     </tbody>
                 </table>
             </div>

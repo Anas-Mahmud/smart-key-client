@@ -23,8 +23,8 @@ const DashboardLayout = () => {
                         <li className='mt-5 bg-base-200 rounded-lg'><Link to={'/dashboard/addProduct'}>Add Product</Link></li>
                         {
                             isAdmin && <>
-                                <li className='mt-5 bg-base-200 rounded-lg'><Link to={'/dashboard/allUsers'}>All Buyers</Link></li>
-                                <li className='mt-5 bg-base-200 rounded-lg'><Link >All Seller</Link></li>
+                                <li className='mt-5 bg-base-200 rounded-lg'><Link to={'/dashboard/mySellers'}>My Seller</Link></li>
+                                <li className='mt-5 bg-base-200 rounded-lg'><Link to={'/dashboard/allUsers'}>My Buyers</Link></li>
                             </>
                         }
                     </ul>
