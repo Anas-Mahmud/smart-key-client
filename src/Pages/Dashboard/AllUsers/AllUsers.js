@@ -23,7 +23,7 @@ const AllUsers = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount) {
-                    toast.success('Make Admin successful.')
+                    toast.success('verified successful.')
                     refetch();
                 }
             })
@@ -50,7 +50,7 @@ const AllUsers = () => {
                                 <th>{i + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-info'>Make Admin</button>}</td>
+                                <td>{user?.role !== 'verified' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-info'>Verify</button>}</td>
                                 <td><button className='btn btn-xs btn-outline btn-error'>Delete</button></td>
                             </tr>)
                         }
