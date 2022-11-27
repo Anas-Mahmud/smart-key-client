@@ -1,26 +1,6 @@
-// import React, { useEffect, useState } from 'react';
 import CategoryCard from '../CategoryCard/CategoryCard';
 
 const ProductCategories = ({ categories }) => {
-    // const [allProducts, setAllProducts] = useState([])
-    // // const [productCategory, setProductCategory] = useState([])
-
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/allProducts')
-    //         .then(res => res.json())
-    //         .then(data => setAllProducts(data))
-    // }, [])
-
-    // const productCategories = allProducts.map(product => product.category)
-    // console.log(productCategories);
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/products/${productCategories}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //         })
-    // }, [productCategories])
 
     return (
         <div>

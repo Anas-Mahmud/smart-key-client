@@ -32,8 +32,8 @@ const SignUp = () => {
         formData.append('image', image)
         console.log(formData);
 
-        // 613bae113c97f7b162ce49e2a5e7aec5
-        const url = `https://api.imgbb.com/1/upload?key=613bae113c97f7b162ce49e2a5e7aec5`
+        const imghostKey = process.env.REACT_APP_imgbb_key;
+        const url = `https://api.imgbb.com/1/upload?key=${imghostKey}`
 
         fetch(url, {
             method: "POST",
@@ -87,17 +87,6 @@ const SignUp = () => {
                 setCreatedUserEmail(email);
             })
     }
-
-    // const getUserToken = email => {
-    //     fetch(`http://localhost:5000/jwt?email=${email}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.accessToken) {
-    //                 localStorage.setItem('accessToken', data.accessToken);
-    //                 navigate(from, { replace: true })
-    //             }
-    //         })
-    // }
 
     return (
         <div>
