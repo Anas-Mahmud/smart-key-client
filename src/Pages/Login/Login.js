@@ -5,16 +5,23 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import SmallSpinner from '../../components/SmallSpinner/SmallSpinner';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
 
     const { register, handleSubmit } = useForm();
     const { signIn, providerLogin, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const [token] = useToken(loginUserEmail);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
+
+    if (token) {
+        navigate(from, { replace: true })
+    }
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -26,9 +33,9 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setLoginUserEmail(data.email);
                 setLoading(false)
                 toast("User Login Successfully")
-                navigate(from, { replace: true })
             }).catch(err => {
                 console.error(err.message)
                 setError(err.message)

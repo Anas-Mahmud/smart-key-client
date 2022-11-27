@@ -70,7 +70,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
                             <input name='meetingLocation' type="text" placeholder="Meeting location" className="input input-bordered w-full" />
                         </div>
                         <br />
-                        <input className='btn btn-accent w-full' type="submit" value="Submit" />
+                        <input className='btn btn-accent w-full' type="submit" value="Add to cart" />
                     </form>
                 </div>
             </div>

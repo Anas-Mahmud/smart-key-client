@@ -14,7 +14,7 @@ const CategoryProduct = ({ product, setProductDetails }) => {
                     <h3 className="text-gray-800">Original Price: <strong>{originalPrice}</strong>$</h3>
                     <h3 className="text-gray-800">Seller Name: {sellerName}</h3>
                     <h3 className="text-gray-800 mb-3">Location: {location}</h3>
-                    <label onClick={() => setProductDetails(product)} htmlFor="booking-modal" className="btn btn-primary ">Bye Now</label>
+                    <label onClick={() => setProductDetails(product)} htmlFor="booking-modal" className="btn btn-primary ">Buy Now</label>
                 </div>
             </div>
         </div>
