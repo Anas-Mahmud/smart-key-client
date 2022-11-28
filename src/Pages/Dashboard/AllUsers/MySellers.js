@@ -36,7 +36,7 @@ const MySellers = () => {
     }
 
     const handleDelete = user => {
-        console.log(user);
+        // console.log(user);
         fetch(`http://localhost:5000/user/${user._id}`, {
             method: 'DELETE',
             headers: {

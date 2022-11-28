@@ -36,7 +36,6 @@ const MyOrders = () => {
                             <th>Image <span className='ml-6'>Product</span></th>
                             <th>Price</th>
                             <th>Pay</th>
-                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,9 +59,6 @@ const MyOrders = () => {
                                 <td>
                                     <button className="btn btn-info btn-md">Pay</button>
                                 </td>
-                                <th>
-                                    <button className="btn btn-outline btn-warning btn-md">Cancel</button>
-                                </th>
                             </tr>)
                         }
                     </tbody>
