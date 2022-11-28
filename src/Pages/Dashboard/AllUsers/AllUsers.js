@@ -13,7 +13,7 @@ const AllUsers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/buyers')
+            const res = await fetch('https://smart-key-server.vercel.app/buyers')
             const data = await res.json();
             return data;
         }
@@ -21,7 +21,7 @@ const AllUsers = () => {
 
     const handleDelete = user => {
         // console.log(user);
-        fetch(`http://localhost:5000/user/${user._id}`, {
+        fetch(`https://smart-key-server.vercel.app/user/${user._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

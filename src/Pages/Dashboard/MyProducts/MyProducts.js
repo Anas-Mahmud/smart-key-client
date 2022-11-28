@@ -17,7 +17,7 @@ const MyProducts = () => {
         queryKey: ['myProducts'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/myProducts?email=${user?.email}`, {
+                const res = await fetch(`https://smart-key-server.vercel.app/myProducts?email=${user?.email}`, {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -30,9 +30,10 @@ const MyProducts = () => {
             }
         }
     })
+    console.log(myProducts);
 
     const handleDelete = product => {
-        fetch(`http://localhost:5000/product/${product._id}`, {
+        fetch(`https://smart-key-server.vercel.app/product/${product._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

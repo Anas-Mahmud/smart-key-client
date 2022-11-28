@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: '/products/:id',
                 element: <AllCategoryProducts></AllCategoryProducts>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://smart-key-server.vercel.app/products/${params.id}`)
             },
         ]
     },

@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const AddProduct = () => {
+    const { user } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [categories, setCategories] = useState([]);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/selectCategories')
+        fetch('https://smart-key-server.vercel.app/selectCategories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -44,7 +46,7 @@ const AddProduct = () => {
                     }
                     console.log(product);
 
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://smart-key-server.vercel.app/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -79,6 +81,7 @@ const AddProduct = () => {
                                         type="text"
                                         id="name"
                                         name='name'
+                                        value={user?.name}
                                         {...register("name", {
                                             required: "name is required"
                                         })}
@@ -90,6 +93,8 @@ const AddProduct = () => {
                                         type="email"
                                         id="email"
                                         name='email'
+                                        value={user?.email}
+                                        disabled
                                         {...register("email")}
                                     />
                                 </div>

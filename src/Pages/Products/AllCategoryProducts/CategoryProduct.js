@@ -6,7 +6,7 @@ const CategoryProduct = ({ product, setProductDetails }) => {
 
     // const [isVerifiedUsers, setIsVerifiedUsers] = useState(null);
     // useEffect(() => {
-    //     fetch('http://localhost:5000/verifiedUser')
+    //     fetch('https://smart-key-server.vercel.app/verifiedUser')
     //         .then(res => res.json())
     //         .then(data => setIsVerifiedUsers(data))
     // }, [])

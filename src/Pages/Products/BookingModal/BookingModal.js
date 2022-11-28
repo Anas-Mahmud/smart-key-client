@@ -34,7 +34,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
         }
         console.log(orderProduct);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://smart-key-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
