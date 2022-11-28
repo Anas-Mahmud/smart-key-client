@@ -70,7 +70,7 @@ const MySellers = () => {
                                 <th>{i + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user?.status !== 'verified' && <button onClick={() => handleVerify(user._id)} className='btn btn-xs btn-info'>Verify</button>}</td>
+                                <td><button onClick={() => handleVerify(user._id)} className='btn btn-xs btn-info'>{user?.status !== 'verified' ? 'verify' : 'verified'}</button></td>
                                 <td><label onClick={() => setDeleteUser(user)} htmlFor="confirmation-modal" className="btn btn-outline btn-warning btn-sm">Delete</label></td>
                             </tr>)
                         }
