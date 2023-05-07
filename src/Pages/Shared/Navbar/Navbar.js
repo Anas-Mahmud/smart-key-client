@@ -33,6 +33,9 @@ const Navbar = () => {
       <li>
         <Link to={"/contact"}>Contact</Link>
       </li>
+      <li>
+        <Link>About US</Link>
+      </li>
     </React.Fragment>
   );
 
@@ -64,14 +67,14 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-accent">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full ml-6 dark:bg-accent">
             <img src={logo} alt="" />
           </div>
           <Link
             to={"/"}
-            className="btn btn-ghost normal-case text-2xl font-semibold"
+            className="btn btn-ghost normal-case text-3xl font-serif font-bold -ml-4"
           >
-            Smart Key
+            ey <p className="font-mono ml-2"> Smart</p>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
