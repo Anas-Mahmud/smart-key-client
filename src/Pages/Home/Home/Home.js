@@ -3,6 +3,7 @@ import ProductCategories from "../../Products/ProductCategories/ProductCategorie
 import About from "../About";
 import Banner from "../Banner/Banner";
 import Contact from "../Contact";
+import FAQ from "../FAQ";
 import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <Banner></Banner>
       <ProductCategories categories={categories}></ProductCategories>
       <Reviews></Reviews>
+      <FAQ></FAQ>
       <About></About>
       <Contact></Contact>
     </div>
