@@ -3,56 +3,198 @@ import React from "react";
 const Reviews = () => {
   return (
     <div>
-      <section className="my-8 dark:bg-gray-200 dark:text-gray-800">
-        <div className="container flex flex-col items-center p-4 mx-auto space-y-6 md:p-8">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            fill="currentColor"
-            className="w-16 h-16 dark:text-primary"
-          >
-            <polygon points="328.375 384 332.073 458.999 256.211 406.28 179.924 459.049 183.625 384 151.586 384 146.064 496 182.756 496 256.169 445.22 329.242 496 365.936 496 360.414 384 328.375 384"></polygon>
-            <path d="M415.409,154.914l-2.194-48.054L372.7,80.933,346.768,40.414l-48.055-2.2L256,16.093,213.287,38.219l-48.055,2.2L139.3,80.933,98.785,106.86l-2.194,48.054L74.464,197.628l22.127,42.715,2.2,48.053L139.3,314.323l25.928,40.52,48.055,2.195L256,379.164l42.713-22.126,48.055-2.195,25.928-40.52L413.214,288.4l2.195-48.053,22.127-42.715Zm-31.646,76.949L382,270.377l-32.475,20.78-20.78,32.475-38.515,1.76L256,343.125l-34.234-17.733-38.515-1.76-20.78-32.475L130,270.377l-1.759-38.514L110.5,197.628,128.237,163.4,130,124.88,162.471,104.1l20.78-32.474,38.515-1.76L256,52.132l34.234,17.733,38.515,1.76,20.78,32.474L382,124.88l1.759,38.515L401.5,197.628Z"></path>
-          </svg>
-          <p className="px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl lg:max-w-2xl xl:max-w-4xl dark:text-gray-800">
-            "I am taking services from resell.net since last 1 years now. By far
-            the best hosting provider I found in Bangladesh with excellent
-            customer support with most economical prices and above all 99.9%
-            guaranteed up time."
-          </p>
-          <div className="flex justify-center space-x-3">
-            <img
-              src="https://i.pinimg.com/originals/46/53/09/4653090d5224f516303f5b7f7f6f2f37.jpg"
-              alt=""
-              className="w-20 h-20 bg-center bg-cover rounded-md dark:bg-gray-500"
-            />
-            <div>
-              <p className="leading-tight">Leroy Jenkins</p>
-              <p className="text-sm leading-tight dark:text-gray-500">
-                Founder, Company
-              </p>
-              <div
-                className="flex items-center py-2 space-x-1 text-sm dark:text-secondary"
+      <p className="text-center text-3xl font-bold font-mono">
+        What our customers are saying
+      </p>
+      <hr className="w-2/4 mb-3 mx-auto" />
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-20">
+        <div className="grid gap-8 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full">
+          <div className="p-8 bg-stone-100 border rounded shadow-sm">
+            <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
+              <a
                 href="/"
+                className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                aria-label="Category"
               >
-                <span>Read full story</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="w-4 h-4"
+                weekend
+              </a>{" "}
+              <span className="text-gray-600">— 1 Feb 2020</span>
+            </p>
+            <a
+              href="/"
+              aria-label="Article"
+              title="Jingle Bells"
+              className="inline-block mb-3 text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Jingle Bells
+            </a>
+            <p className="mb-5 text-gray-700">
+              Some pilots get picked and become television programs. Some don't,
+              become nothing.
+            </p>
+            <div className="flex items-center">
+              <a href="/" aria-label="Author" title="Author" className="mr-3">
+                <img
+                  src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                  alt="avatar"
+                  className="object-cover w-10 h-10 rounded-full shadow-sm"
+                />
+              </a>
+              <div>
+                <a
+                  href="/"
+                  aria-label="Author"
+                  title="Author"
+                  className="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
+                  Vasile Melinte
+                </a>
+                <p className="text-sm font-medium leading-4 text-gray-600">
+                  Author
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8 bg-slate-100 border rounded shadow-sm">
+            <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
+              <a
+                href="/"
+                className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                aria-label="Category"
+              >
+                holidays
+              </a>{" "}
+              <span className="text-gray-600">— 15 Nov 2020</span>
+            </p>
+            <a
+              href="/"
+              aria-label="Article"
+              title="Happy new Year"
+              className="inline-block mb-3 text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Happy new Year
+            </a>
+            <p className="mb-5 text-gray-700">
+              Pommy ipsum smeg head whizz morris dancers come hither, bugger
+              codswallop gob. Taking the mick middle class bog.
+            </p>
+            <div className="flex items-center">
+              <a href="/" aria-label="Author" title="Author" className="mr-3">
+                <img
+                  src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                  alt="avatar"
+                  className="object-cover w-10 h-10 rounded-full shadow-sm"
+                />
+              </a>
+              <div>
+                <a
+                  href="/"
+                  aria-label="Author"
+                  title="Author"
+                  className="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                >
+                  John Doe
+                </a>
+                <p className="text-sm font-medium leading-4 text-gray-600">
+                  Author
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8 bg-stone-100 border rounded shadow-sm">
+            <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
+              <a
+                href="/"
+                className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                aria-label="Category"
+              >
+                programming
+              </a>{" "}
+              <span className="text-gray-600">— 28 Dec 2020</span>
+            </p>
+            <a
+              href="/"
+              aria-label="Article"
+              title="Why i love C++"
+              className="inline-block mb-3 text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Why i love C++
+            </a>
+            <p className="mb-5 text-gray-700">
+              Sportacus andrew weatherall goose Refined gentlemen super mario
+              des lynam alpha trion zap rowsdower.
+            </p>
+            <div className="flex items-center">
+              <a href="/" aria-label="Author" title="Author" className="mr-3">
+                <img
+                  src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                  alt="avatar"
+                  className="object-cover w-10 h-10 rounded-full shadow-sm"
+                />
+              </a>
+              <div>
+                <a
+                  href="/"
+                  aria-label="Author"
+                  title="Author"
+                  className="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                >
+                  Andrew Larkin
+                </a>
+                <p className="text-sm font-medium leading-4 text-gray-600">
+                  Author
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8 bg-slate-100 border rounded shadow-sm">
+            <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
+              <a
+                href="/"
+                className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                aria-label="Category"
+              >
+                holidays
+              </a>{" "}
+              <span className="text-gray-600">— 15 Nov 2020</span>
+            </p>
+            <a
+              href="/"
+              aria-label="Article"
+              title="Happy new Year"
+              className="inline-block mb-3 text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Happy new Year
+            </a>
+            <p className="mb-5 text-gray-700">
+              Pommy ipsum smeg head whizz morris dancers come hither, bugger
+              codswallop gob. Taking the mick middle class bog.
+            </p>
+            <div className="flex items-center">
+              <a href="/" aria-label="Author" title="Author" className="mr-3">
+                <img
+                  src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                  alt="avatar"
+                  className="object-cover w-10 h-10 rounded-full shadow-sm"
+                />
+              </a>
+              <div>
+                <a
+                  href="/"
+                  aria-label="Author"
+                  title="Author"
+                  className="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                >
+                  John Doe
+                </a>
+                <p className="text-sm font-medium leading-4 text-gray-600">
+                  Author
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
