@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCategories from "../../Products/ProductCategories/ProductCategories";
+import About from "../About";
 import Banner from "../Banner/Banner";
 import Contact from "../Contact";
 import Reviews from "../Reviews/Reviews";
@@ -19,6 +20,7 @@ const Home = () => {
       <Banner></Banner>
       <ProductCategories categories={categories}></ProductCategories>
       <Reviews></Reviews>
+      <About></About>
       <Contact></Contact>
     </div>
   );

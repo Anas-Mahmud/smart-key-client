@@ -7,6 +7,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import MySellers from "../Pages/Dashboard/AllUsers/MySellers";
 import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+import About from "../Pages/Home/About";
 import Contact from "../Pages/Home/Contact";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/products/:id",

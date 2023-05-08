@@ -34,7 +34,7 @@ const Navbar = () => {
         <Link to={"/contact"}>Contact</Link>
       </li>
       <li>
-        <Link>About US</Link>
+        <Link to={"/about"}>About US</Link>
       </li>
     </React.Fragment>
   );
