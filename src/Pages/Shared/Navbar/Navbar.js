@@ -31,10 +31,13 @@ const Navbar = () => {
         <Link to={"/blog"}>Blogs</Link>
       </li>
       <li>
-        <Link to={"/contact"}>Contact</Link>
+        <Link to={"/faq"}>FAQ</Link>
       </li>
       <li>
         <Link to={"/about"}>About US</Link>
+      </li>
+      <li>
+        <Link to={"/contact"}>Contact</Link>
       </li>
     </React.Fragment>
   );
