@@ -35,19 +35,7 @@ const Contact = () => {
         Contact US
       </h1>
       <hr className="w-2/4 mx-auto my-5" />
-      {/* <h2 className="text-lg text-center">
-        I'm Junior Web Developer, If you want to give me some opportunity or{" "}
-        <br /> have any queries, feel free to reach me.
-      </h2> */}
       <div className="grid max-w-screen-xl grid-cols-1 gap-20 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 text-gray-100">
-        <div className="flex flex-col justify-between">
-          {/* <div className="text-center">
-            <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
-              Let's talk!
-            </h2>
-          </div> */}
-          <img src={img} alt="" className="pr-4 h-full" />
-        </div>
         <form
           ref={form}
           onSubmit={sendEmail}
@@ -93,6 +81,9 @@ const Contact = () => {
             Send Message
           </button>
         </form>
+        <div className="flex flex-col justify-between">
+          <img src={img} alt="" className="pr-4 h-full" />
+        </div>
       </div>
     </div>
   );
