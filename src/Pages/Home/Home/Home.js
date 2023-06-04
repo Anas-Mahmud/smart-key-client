@@ -6,6 +6,7 @@ import Contact from "../Contact";
 import FAQ from "../FAQ";
 import Feature from "../Feature";
 import Reviews from "../Reviews/Reviews";
+import Timeline from "../Timeline";
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -22,6 +23,7 @@ const Home = () => {
       <Banner></Banner>
       <ProductCategories categories={categories}></ProductCategories>
       <Feature />
+      <Timeline />
       <Reviews></Reviews>
       <FAQ></FAQ>
       <About></About>
