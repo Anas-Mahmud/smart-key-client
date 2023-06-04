@@ -6,6 +6,7 @@ import Contact from "../Contact";
 import FAQ from "../FAQ";
 import Feature from "../Feature";
 import Reviews from "../Reviews/Reviews";
+import Star from "../Star";
 import Timeline from "../Timeline";
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
       <Reviews></Reviews>
       <FAQ></FAQ>
       <About></About>
+      <Star />
       <Contact></Contact>
     </div>
   );
